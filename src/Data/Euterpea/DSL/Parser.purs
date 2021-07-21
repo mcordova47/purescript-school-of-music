@@ -614,8 +614,8 @@ instance showKeyPositionedParseError :: Show PositionedParseError where
 runParser1 :: forall a. Parser a -> String -> Either PositionedParseError a
 runParser1 (Parser p) s =
   let
-    formatErr :: { pos :: Pos, error :: ParseError } -> PositionedParseError
-    formatErr { pos : pos, error : ParseError err } =
+    formatErr :: ParseError -> PositionedParseError
+    formatErr { pos : pos, error : err } =
       PositionedParseError { pos : pos, error : err}
   in
     bimap formatErr _.result (p { str: s, pos: 0 })

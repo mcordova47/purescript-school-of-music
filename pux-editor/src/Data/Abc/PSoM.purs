@@ -12,7 +12,7 @@ import Data.Maybe (Maybe(Nothing))
 import Data.Generic.Rep
 import Data.Generic.Rep.Eq (genericEq)
 import Data.Generic.Rep.Ord (genericCompare)
-import Data.Generic.Rep.Show (genericShow)
+import Data.Show.Generic (genericShow)
 
 -- | Intermediate data structures involved in translating ABC to the PSoM DSL
 
